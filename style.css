@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lora', serif;
 }
 /*nav maenu on the left as a unordered list*/
 .navbar{
@@ -30,10 +30,10 @@ nav ul li{
 /*nav maenu on the right as a vertically list with 50px gapping with each without underline*/
 a{
     text-decoration: none;
-    color: #555;
+    color: #5D4037;
 }
 p{
-    color: #555;
+    color: #5D4037;
 }
 .container{
     max-width: 1300px;
@@ -65,18 +65,18 @@ p{
 
 .btn{
     display: inline-block;
-    background: #ff523b;
-    color: #fff;
+    background: #8B4513;
+    color: #FAF0E6;
     padding:8px 30px;
     margin: 30px 0px;
     border-radius: 30px;
     transition:background 0.5s;
 }
 .btn:hover{
-    background: #563434;
+    background: #7A3D0F;
 }
 .header{
-    background: radial-gradient(#fff, #ffd6d6);
+    background: #FAF0E6;
 }
 .header .row{
     margin-top: 70px;
@@ -107,6 +107,9 @@ p{
     min-width: 200px;
     margin-bottom: 50px;
     transition: transform 0.5s;
+    border: 1px solid #D2B48C; /* Tan border */
+    box-shadow: 0 0 10px rgba(0,0,0,0.05); /* Soft shadow */
+    background-color: #fff; /* Explicit white background for the card */
 }
 .col-4 img{
     width:100%;
@@ -116,11 +119,11 @@ p{
     margin: 0 auto 80px;
     position: relative;
     line-height: 60px;
-    color: #555;
+    color: #5D4037;
 }
 .title::after{
     content: '';
-    background: #ff523b;
+    background: #8B4513;
     width: 80px;
     height: 5px;
     border-radius: 5px;
@@ -129,15 +132,26 @@ p{
     left: 50%;
     transform: translateX(-50%);
 }
-h4{
-    color: #555;
+h1, h2, h3, h4, h5, h6 { /* General heading color consistency */
+    color: #5D4037;
+}
+h4{ /* Keep specific h4 styling if needed, or integrate into above */
+    color: #5D4037; /* Redundant if covered by general rule but safe */
     font-weight: normal;
+}
+.single-product h1 { /* Specific styling for product name on details page */
+    font-size: 2.5em; /* Example size, adjust as needed */
+    margin-bottom: 15px;
 }
 .col-4 p{
     font-size: 14px;
 }
 .rating .fa{
-    color: #ff523b;
+    color: #8B4513;
+}
+#product-rating .fa { /* Ensure stars on product details page get correct color */
+    color: #8B4513;
+    margin-right: 2px; /* Add a little spacing between stars */
 }
 .col-4:hover{
     transform:translateY(-5px);
@@ -145,7 +159,7 @@ h4{
 
 /*-----------------------offer -----------------------*/
 .offer{
-    background: radial-gradient(#fff, #ffd6d6);
+    background: #FAF0E6;
     margin-top: 80px;
     padding: 30px 0;
 }
@@ -154,19 +168,21 @@ h4{
     padding: 50px;
 }
 small{
-    color:#555;
+    color:#5D4037;
 }
 
 /*-----------------------Testimonial -----------------------*/
 .testimonial{
     padding-top: 100px;
+    background: #FAF0E6; /* Added light beige background */
 }
 .testimonial .col-3{
     text-align: center;
     padding: 40px 20px;
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px 0px rgba(74, 59, 49, 0.1); /* Softer, brown-toned shadow */
     cursor: pointer;
     transition: transform 0.5s;
+    background-color: #FFFBF5; /* Light creamy background for boxes */
 }
 .testimonial .col-3 img{
     width:50px;
@@ -178,49 +194,33 @@ small{
 }
 .fa.fa-quote-left{
     font-size: 34px;
-    color: #ff523b;
+    color: #8B4513;
 }
 .col-3 p{
     font-size: 12px;
     margin: 12px 0;
-    color: #777;
+    color: #5D4037;
 }
 .testimonial .col-3 h3{
     font-weight: 600;
-    color: #555;
+    color: #5D4037;
     font-size: 16px;
-}
-
-/*-----------------------Brands -----------------------*/
-.brands{
-    margin: 100px auto;
-}
-.col-5{
-    width: 100px;
-}
-.col-5 img{
-    width: 100%;
-    cursor: pointer;
-    filter: grayscale(100%);
-}
-.col-5 img:hover{
-    filter: grayscale(0);
 }
 
 /*-----------------------Footer -----------------------*/
 .footer{
-    background:#000; /*black;*/
-    color: #8a8a8a;
+    background:#4A3B31; /*black;*/
+    color: #FDF5E6;
     font-size: 14px;
     padding:60px 0 20px;
 }
 
 .footer p{
-    color: #8a8a8a;
+    color: #FDF5E6;
 }
 
 .footer h3{
-    color:#fff;
+    color:#FDF5E6;
     margin-bottom: 20px;
 }
 .footer-col-1, .footer-col-2,.footer-col-3,.footer-col-4{
@@ -245,16 +245,10 @@ small{
 ul{
     list-style-type: none;   
 }
-.app-logo{
-    margin-top: 20px;
-}
-.app-logo img{
-    width: 140px;
-}
 
 .footer hr{
     border: none;
-    background: #b5b5b5;
+    background: #7A6A5D; /* Lightened HR for dark background */
     height: 1px;
     margin: 20px 0;
 }
@@ -276,7 +270,7 @@ ul{
         position: absolute;
         top:70px;
         left: 0;
-        background: #333;
+        background: #333; /* Mobile menu background - kept for contrast */
         width: 100%;
         overflow: hidden;
         transition: max-height 0.5s;
@@ -289,7 +283,7 @@ ul{
         margin-bottom: 10px;
     }
     nav ul li a{
-        color: #fff;
+        color: #fff; /* Mobile menu link color - kept for contrast */
     }
     .menu-icon{ 
         display:block;
@@ -328,7 +322,7 @@ ul{
     margin:100px auto 50px;
 }
 select{
-    border:1px solid #ff523b;
+    border:1px solid #8B4513;
     padding: 5px;
 }
 select:focus{
@@ -340,7 +334,7 @@ select:focus{
 }
 .page-btn span{
     display: inline-block;
-    border:1px solid #ff523b;
+    border:1px solid #8B4513;
     margin-left: 10px;
     width: 40px;
     height: 40px;
@@ -349,8 +343,8 @@ select:focus{
     cursor: pointer;
 }
 .page-btn span:hover{
-    background: #ff523b;
-    color: #fff;
+    background: #8B4513;
+    color: #FAF0E6;
 }
 
 
@@ -365,10 +359,11 @@ select:focus{
 .single-product .col-2{
     padding:20px;
 }
-.single-product h4{
+.single-product h4{ /* Product price on details page */
     margin: 20px 0;
     font-size: 22px;
     font-weight: bold;
+    color: #5D4037; /* Ensure price color is consistent */
 }
 .single-product select{
     display: block;
@@ -381,14 +376,20 @@ select:focus{
     padding-left: 10px;
     font-size: 20px;
     margin-right: 10px;
-    border: apx solid #ff523b;
+    border: apx solid #8B4513;
 }
 input:focus{
     outline: none;
 }
 .single-product .fa{
-    color:#ff523b;
+    color:#8B4513;
     margin-left: 10px;
+}
+#single-product-container h2 { /* Styling for "Product not found" message */
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #5D4037;
 }
 .small-img-row{
    display:flex;
@@ -419,8 +420,8 @@ table{
 th{
     text-align: left;
     padding: 5px;
-    color: #fff;
-    background: #ff523b;
+    color: #FAF0E6;
+    background: #8B4513;
     font-weight: normal;
 }
 td{
@@ -433,7 +434,7 @@ td input{
     padding: 5px;
 }
 td a{
-    color: #ff523b;
+    color: #8B4513;
 }
 td img{
     width: 80px;
@@ -445,7 +446,7 @@ td img{
     justify-content: flex-end;
 }
 .total-price table{
-    border-top: 3px solid #ff523b;
+    border-top: 3px solid #8B4513;
     width: 100%;
     max-width: 400px;
 }
@@ -460,7 +461,7 @@ th:last-child{
         /*------------------------------ account-page ------------------------------*/
 .account-page{
     padding: 50px 0;
-    background: radial-gradient(#fff, #ffd6d6);
+    background: #FAF0E6;
 }
 .form-container{
     background: #fff;
@@ -477,7 +478,7 @@ th:last-child{
 .form-container span{
     font-weight: bold;
     padding: 0 10px;
-    color: #555;
+    color: #5D4037;
     cursor: pointer;
     width: 100px;
     display: inline-block;
@@ -525,7 +526,7 @@ form a{
 #Indicator{
     width: 100px;
     border: none;
-    background: #ff523b;
+    background: #8B4513;
     height: 3px;
     margin-top: 8px;
     transform: translateX(100px);
