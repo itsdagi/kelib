@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
-        <title>All Products - Redstore</title>
+        <title>Product Details - Kelib Workshop</title>
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" width="125px"></a>
+                    <a href="index.html"><img src="images/kelib-logo.png" width="125px" alt="Kelib Workshop Logo"></a>
                 </div>
                 <nav>
                     <ul id="MenuItems">
@@ -29,8 +29,8 @@
 
                     </ul>
                 </nav>
-                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
-                <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" >
+                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" alt="Shopping Cart"></a>
+                <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" alt="Menu Icon">
             </div>
            
         </div>
@@ -38,16 +38,16 @@
     
         
         <!------------------------------ Single product details------------------------------>
-        <div class="small-container single-product">
+        <div class="small-container single-product" id="single-product-container">
             
             
             <!--<h2 class="title" >Featured Products</h2>-->
             <div class="row">
                     <div class="col-2">
-                        <img src="images/product-11.jpg" width="100%" id="productImg">
+                        <img src="images/product-11.jpg" width="100%" id="product-image"> <!-- Updated ID -->
                         
                         
-                        <div class="small-img-row">
+                        <div class="small-img-row"> <!-- This gallery will remain static for now -->
                             <div class="small-img-col">
                                 <img src="images/product-11.jpg" width="100%" class="small-img">
                             </div>
@@ -64,22 +64,23 @@
                     </div>
                 
                     <div class="col-2">
-                        <p>Home / Shoes</p>
-                        <h1>Downshifter Sports Shoes</h1>
-                        <h4>$50.00</h4>
+                        <p id="product-breadcrumb">Home / Shoes</p> <!-- Added ID for breadcrumb if needed later -->
+                        <h1 id="product-name">Downshifter Sports Shoes</h1> <!-- Updated ID -->
+                        <div id="product-rating"></div> <!-- Added div for rating -->
+                        <h4 id="product-price">$50.00</h4> <!-- Updated ID -->
                         <select>
                             <option>Select Size</option>
-                            <option>6<!--Small (s)--></option>
-                            <option>7<!--Medium (M)--></option>
-                            <option>8<!--Large (L)--></option>
-                            <option>9<!--XL--></option>
-                            <option>10<!--XXL--></option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
                         </select>
-                        <input type="number" values="1">
+                        <input type="number" value="1"> <!-- Corrected 'values' to 'value' -->
                         <a href="cart.html" class="btn">Add to Cart</a>
                         <h3>Product Details <i class="fa fa-indent" ></i></h3>
                         <br>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                        <p id="product-description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p> <!-- Updated ID -->
                     </div>
                 </div>
             </div>
@@ -154,16 +155,12 @@
             
             <div class="row">
                 <div class="footer-col-1">
-                    <h3>Download Our App</h3>
-                    <p>Download App for Android and ios mobile phone.</p>
-                    <div class="app-logo">
-                        <img src="images/play-store.png" alt="">
-                        <img src="images/app-store.png" alt="">
-                    </div>
+                    <h3>Connect With Us</h3>
+                    <p>Stay updated with our latest handcrafted arrivals and stories.</p>
                 </div>
                 <div class="footer-col-2">
-                    <img src="images/logo-white.png">
-                    <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+                    <img src="images/kelib-logo-white.png" alt="Kelib Workshop Footer Logo">
+                    <p>Our passion is crafting beautiful, durable handmade shoes with a personal touch.</p>
                 </div>
                 <div class="footer-col-3">
                     <h3>Useful Links</h3>
@@ -187,7 +184,7 @@
             </div>
             
             <hr><!--horizontal line-->
-            <p class="copyright">Copyright 2021 - Apurba Kr. Pramanik</p>
+            <p class="copyright">© 2023 Kelib Workshop. All Rights Reserved.</p>
             
         </div>
     </div>
@@ -211,23 +208,71 @@
         <!-----------------------js for product gallery-------------------->
         
         <script>
-            var productImg=document.getElementById("productImg");
+            var productImg=document.getElementById("product-image"); // Ensure this matches the new ID
             var smallImg=document.getElementsByClassName("small-img");
             
-            smallImg[0].onclick=function(){
-                productImg.src=smallImg[0].src;
-            }
-             smallImg[1].onclick=function(){
-                productImg.src=smallImg[1].src;
-            }
-              smallImg[2].onclick=function(){
-                productImg.src=smallImg[2].src;
-            }
-               smallImg[3].onclick=function(){
-                productImg.src=smallImg[3].src;
-            }
+            // Keep existing small image gallery functionality if desired,
+            // but it won't be dynamically updated by the new script for now.
+            if(smallImg.length > 0) smallImg[0].onclick=function(){ productImg.src=smallImg[0].src; }
+            if(smallImg.length > 1) smallImg[1].onclick=function(){ productImg.src=smallImg[1].src; }
+            if(smallImg.length > 2) smallImg[2].onclick=function(){ productImg.src=smallImg[2].src; }
+            if(smallImg.length > 3) smallImg[3].onclick=function(){ productImg.src=smallImg[3].src; }
             
-            
+        </script>
+        <script src="index.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const productId = new URLSearchParams(window.location.search).get('id');
+            const singleProductContainer = document.getElementById('single-product-container'); 
+        
+            function generateStars(rating) {
+                let starsHTML = '';
+                const fullStars = Math.floor(rating);
+                const halfStar = rating % 1 !== 0;
+                const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+        
+                for (let i = 0; i < fullStars; i++) {
+                    starsHTML += '<i class="fa fa-star"></i>';
+                }
+                if (halfStar) {
+                    starsHTML += '<i class="fa fa-star-half-o"></i>';
+                }
+                for (let i = 0; i < emptyStars; i++) {
+                    starsHTML += '<i class="fa fa-star-o"></i>';
+                }
+                return starsHTML;
+            }
+        
+            if (productId) {
+                const product = products.find(p => p.id === parseInt(productId));
+        
+                if (product) {
+                    document.getElementById('product-image').src = product.imageSrc;
+                    document.getElementById('product-image').alt = product.name;
+                    document.getElementById('product-name').textContent = product.name;
+                    document.getElementById('product-price').textContent = '$' + parseFloat(product.price).toFixed(2);
+                    document.getElementById('product-description').textContent = product.description_long;
+                    
+                    const ratingElement = document.getElementById('product-rating');
+                    if(ratingElement) ratingElement.innerHTML = generateStars(product.ratingStars);
+                    
+                    document.title = product.name + " - Kelib Workshop";
+        
+                    // Update breadcrumb
+                    const breadcrumbElement = document.getElementById('product-breadcrumb');
+                    if (breadcrumbElement) {
+                        // Assuming a simple breadcrumb structure, update the product part
+                        // More complex logic might be needed for multi-level categories
+                        breadcrumbElement.textContent = 'Home / Shoes / ' + product.name; 
+                    }
+
+                } else {
+                    if(singleProductContainer) singleProductContainer.innerHTML = '<h2>Product not found.</h2>';
+                }
+            } else {
+                if(singleProductContainer) singleProductContainer.innerHTML = '<h2>No product specified.</h2>';
+            }
+        });
         </script>
     </body>
 </html>
